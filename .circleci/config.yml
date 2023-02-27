@@ -6,4 +6,4 @@ jobs:
       - checkout
       - run: |
           curl -Ls https://github.com/codacy/codacy-coverage-reporter/releases/download/6.0.2/codacy-coverage-reporter-6.0.2-assembly.jar -o codacy-coverage-reporter.jar
-          java -jar codacy-coverage-reporter.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
+          java -jar codacy-coverage-reporter.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml 
