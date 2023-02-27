@@ -1,9 +1,9 @@
 jobs:
-  codacy:
+  build:
     docker:
-image: openjdk:8
+      - image: openjdk:8
     steps:
-checkout
-run: |
-  curl -Ls https://github.com/codacy/codacy-coverage-reporter/releases/download/6.0.2/codacy-coverage-reporter-6.0.2-assembly.jar -o codacy-coverage-reporter.jar
-  java -jar codacy-coverage-reporter.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
+      - checkout
+      - run: |
+          curl -Ls https://github.com/codacy/codacy-coverage-reporter/releases/download/6.0.2/codacy-coverage-reporter-6.0.2-assembly.jar -o codacy-coverage-reporter.jar
+          java -jar codacy-coverage-reporter.jar report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
